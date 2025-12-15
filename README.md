@@ -20,24 +20,23 @@
 ![revoke](https://github.com/user-attachments/assets/4e77048f-b96b-4db2-b87c-31a580f85439)
 
 下载地址：
-**[⚡️点我下载最新版本](https://github.com/huiyadanli/RevokeMsgPatcher/releases/download/2.1/RevokeMsgPatcher.v2.1.zip)** |
+**[⚡️点我下载最新版本](https://release-assets.githubusercontent.com/github-production-release-asset/1116956800/8195c102-c282-4cae-90d5-5bcef560619e?sp=r&sv=2018-11-09&sr=b&spr=https&se=2025-12-15T18%3A21%3A40Z&rscd=attachment%3B+filename%3D4.1.6.10.7z&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2025-12-15T17%3A21%3A00Z&ske=2025-12-15T18%3A21%3A40Z&sks=b&skv=2018-11-09&sig=5JRSRKba5xJIWP90OhILNc1o%2FKJDAo3IecEcQbNRvco%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc2NTgyMTc0NiwibmJmIjoxNzY1ODE5OTQ2LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.PUOg-UGgc18zWKYzBTFOKncHDjiXCnwoly_11rUFud4&response-content-disposition=attachment%3B%20filename%3D4.1.6.10.7z&response-content-type=application%2Foctet-stream）** |
 
-技术说明：
 
 # **原理与方法❓❓❓**：
 [📗微信]
 这是一个成果向教程，参考了一些网上的教程汇总而成。仅用于技术交流。
 
-# 工具
+# 一、工具
 	[x64dbg](https://x64dbg.com/)| 
 	一定的计算机相关知识
-# 信息
+# 二、信息
 通过网上各位大牛的研究，我们已经知道一下信息：
 
 	**·**撤回、限制多开的逻辑都位于 WeChatWin.dll | 文件中
 	**·**撤回相关的关键词 revokemsg |
 	**·**多开相关的关键词 WeChat_App_Instance_Identity_Mutex_Name |
-# 调试
+# 三、调试
 	1.打开 x64dbg （32位用x32dbg，64位用x64dbg，现在新版本微信都是64位），点击 文件 -> 附加 点击 文件 -> 附加
 <img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/a9bfec21-d7a6-4f24-8d2e-81f0a574eb59" />
 
@@ -50,7 +49,7 @@
 	4.右键 搜索 -> 当前区域 -> 字符串 
 <img width="1198" height="749" alt="image" src="https://github.com/user-attachments/assets/4e12b00e-a404-48a1-8edc-8fc87f8df2c0" />
 
-# 防撤回
+# 四、防撤回
 	5.直接搜索关键词 revokemsg，然后双击第一个"revokemsg"进入 
 <img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/39c755a1-3b2e-41d4-94ff-fd5a8e434627" />
 
@@ -61,7 +60,7 @@
 <img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/a6b0af6b-91b4-4a78-9498-e48c08ba4d3d" />
 <img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/e6eff17f-4bde-45dc-bd00-8f3ec02d1267" />
 
-# 多开
+# 五、多开
 	8.直接搜索关键词 WeChat_App_Instance_Identity_Mutex_Name，然后双击第一个L"WeChat_App_Instance_Identity_Mutex_Name"进入 
 <img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/6a836b52-5e9c-4589-a768-69a1eeed7225" />
 
@@ -72,12 +71,12 @@
 <img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/eebffb74-ea6a-4342-9448-c6cd7bbaaa96" />
 <img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/2e002122-54ba-4089-857e-ea731efe8a88" />
 
-# 生成补丁
+# 六、生成补丁
 	11.点击生成补丁的按钮，然后点击修补文件就可以得到修改后的 WeChatWin.dll |
 <img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/cfee4d4a-56a6-4a24-898c-5a719b075507" />
 
 
-## 🔨ddl插件使用方法
+## 🔨dll插件使用方法📖
 
 1. 首先，你的系统需要满足以下条件：
 
