@@ -1,4 +1,4 @@
-
+<img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/c0223b5d-4534-4afa-b085-5777c5401dc7" />
 <p align="center">
 	<a><img width="100px" src="https://raw.githubusercontent.com/huiyadanli/RevokeMsgPatcher/master/Images/logo.png"/></a>
 </p>
@@ -6,71 +6,78 @@
 	<a href="https://www.microsoft.com/download/details.aspx?id=30653">
 		<img src="https://img.shields.io/badge/platform-windows-lightgrey.svg?style=flat-square"/>
 	</a>
-	<a href="https://github.com/huiyadanli/RevokeMsgPatcher/releases">
+	<a href="https://github.com/buke18/WeChatMsgPatcher/releases">
 		<img src="https://img.shields.io/github/downloads/huiyadanli/RevokeMsgPatcher/total.svg?style=flat-square"/>
 	</a>
-	<a href="https://ci.appveyor.com/project/huiyadanli/RevokeMsgPatcher">
+	<a href="https://github.com/buke18/WeChatMsgPatcher">
 		<img src="https://img.shields.io/appveyor/ci/huiyadanli/RevokeMsgPatcher.svg?style=flat-square"/>
 	</a>
 </p>
 
-# 👀微信/QQ/TIM防撤回补丁
-适用于 Windows 下 PC 版微信/QQ/TIM的防撤回补丁。**支持最新版微信/QQ/TIM**，其中微信能够选择安装多开功能。
+# 👀微信防撤回补丁
+适用于 Windows 下 PC 版微信的防撤回补丁。**支持最新版微信**，而且能够选择支持多开的方式
 
-<img width="180px" src="https://raw.githubusercontent.com/huiyadanli/RevokeMsgPatcher/master/Images/revoke.jpg"/>
+![revoke](https://github.com/user-attachments/assets/4e77048f-b96b-4db2-b87c-31a580f85439)
 
 下载地址：
 **[⚡️点我下载最新版本](https://github.com/huiyadanli/RevokeMsgPatcher/releases/download/2.1/RevokeMsgPatcher.v2.1.zip)** |
-[☁备用下载-蓝奏云](https://wwmy.lanzouq.com/b0fot7dpe)  密码:coco| 
-[☁备用下载-百度云](https://pan.baidu.com/s/15ilr78t8F1-VW8eUZSkr_Q?pwd=3rrj) 
 
-相关文档：
-**[✔支持哪些版本](https://github.com/huiyadanli/RevokeMsgPatcher/wiki/%E7%89%88%E6%9C%AC%E6%94%AF%E6%8C%81)** | 
-[❓常见问题](https://github.com/huiyadanli/RevokeMsgPatcher/wiki#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98) | 
-[📖查看完整文档](https://github.com/huiyadanli/RevokeMsgPatcher/wiki)
+技术说明：
 
-原理与方法：
+# **原理与方法❓❓❓**：
 [📗微信]
 这是一个成果向教程，参考了一些网上的教程汇总而成。仅用于技术交流。
 
-工具
-x64dbg
-一定的计算机相关知识
-信息
+# 工具
+	[x64dbg](https://x64dbg.com/)| 
+	一定的计算机相关知识
+# 信息
 通过网上各位大牛的研究，我们已经知道一下信息：
 
-撤回、限制多开的逻辑都位于 WeChatWin.dll 文件中
-撤回相关的关键词 revokemsg
-多开相关的关键词 WeChat_App_Instance_Identity_Mutex_Name
-调试
-打开 x64dbg （32位用x32dbg，64位用x64dbg，现在新版本微信都是64位），点击 文件 -> 附加 点击 文件 -> 附加
+	**·**撤回、限制多开的逻辑都位于 WeChatWin.dll | 文件中
+	**·**撤回相关的关键词 revokemsg |
+	**·**多开相关的关键词 WeChat_App_Instance_Identity_Mutex_Name |
+# 调试
+	1.打开 x64dbg （32位用x32dbg，64位用x64dbg，现在新版本微信都是64位），点击 文件 -> 附加 点击 文件 -> 附加
+<img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/a9bfec21-d7a6-4f24-8d2e-81f0a574eb59" />
 
-附加微信的进程 附加微信的进程
+	2.附加微信的进程 附加微信的进程
+<img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/61af41b5-4308-46a5-b474-2e7749be89e9" />
 
-切换到 符号 选项卡，在左下角搜索 WeChatWin.dll ，双击 wechatwin.dll 进入 CPU 选项卡 
+	3.切换到 符号 选项卡，在左下角搜索 WeChatWin.dll ，双击 wechatwin.dll 进入 CPU 选项卡 
+<img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/7293a7c9-9111-4933-8d28-39a7d8d9bd56" />
 
-右键 搜索 -> 当前区域 -> 字符串 
+	4.右键 搜索 -> 当前区域 -> 字符串 
+<img width="1198" height="749" alt="image" src="https://github.com/user-attachments/assets/4e12b00e-a404-48a1-8edc-8fc87f8df2c0" />
 
-防撤回
-直接搜索关键词 revokemsg，然后双击第一个"revokemsg"进入 
+# 防撤回
+	5.直接搜索关键词 revokemsg，然后双击第一个"revokemsg"进入 
+<img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/39c755a1-3b2e-41d4-94ff-fd5a8e434627" />
 
-需要进行修改的是当前行的上面一行： je xxxxxx 
+	6.需要进行修改的是当前行的上面一行： je xxxxxx 
+<img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/a00aa435-c3f0-46c2-90e1-3a61df605b75" />
 
-双击 je xxxxxx ，把 je 修改为 jmp 即可 修改为jmp 修改后
+	7.双击 je xxxxxx ，把 je 修改为 jmp 即可 修改为jmp 修改后
+<img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/a6b0af6b-91b4-4a78-9498-e48c08ba4d3d" />
+<img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/e6eff17f-4bde-45dc-bd00-8f3ec02d1267" />
 
-多开
-直接搜索关键词 WeChat_App_Instance_Identity_Mutex_Name，然后双击第一个L"WeChat_App_Instance_Identity_Mutex_Name"进入 
+# 多开
+	8.直接搜索关键词 WeChat_App_Instance_Identity_Mutex_Name，然后双击第一个L"WeChat_App_Instance_Identity_Mutex_Name"进入 
+<img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/6a836b52-5e9c-4589-a768-69a1eeed7225" />
 
-需要进行修改的是当前行的上面第一个出现的 push ebp 
+	9.需要进行修改的是当前行的上面第一个出现的 push ebp 
+<img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/cd9a0420-ac90-4ac8-8a33-85a49df9dcef" />
 
-双击 push ebp ，把 push ebp 修改为 ret 即可 修改为jmp 修改后
+	10.双击 push ebp ，把 push ebp 修改为 ret 即可 修改为jmp 修改后
+<img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/eebffb74-ea6a-4342-9448-c6cd7bbaaa96" />
+<img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/2e002122-54ba-4089-857e-ea731efe8a88" />
 
-生成补丁
-点击生成补丁的按钮，然后点击修补文件就可以得到修改后的 WeChatWin.dll |
+# 生成补丁
+	11.点击生成补丁的按钮，然后点击修补文件就可以得到修改后的 WeChatWin.dll |
+<img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/cfee4d4a-56a6-4a24-898c-5a719b075507" />
 
-**（本人不参与方法寻找，仅做特征搬运）**
 
-## 🔨使用方法
+## 🔨ddl插件使用方法
 
 1. 首先，你的系统需要满足以下条件：
 
@@ -96,7 +103,4 @@ x64dbg
 ## ❤️投喂
 
 觉的好用的话，可以支持作者哟ヾ(･ω･`｡) 
-
-## 📄License💡
-
 ![](https://raw.githubusercontent.com/huiyadanli/RevokeMsgPatcher/master/Images/give_a_star.png)
