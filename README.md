@@ -28,14 +28,14 @@
 这是一个成果向教程，参考了一些网上的教程汇总而成。仅用于技术交流。
 
 # 一、工具
-	[x64dbg](https://x64dbg.com/)| 
+	[x64dbg]
 	一定的计算机相关知识
 # 二、信息
 通过网上各位大牛的研究，我们已经知道一下信息：
 
-	**·**撤回、限制多开的逻辑都位于 WeChatWin.dll | 文件中
-	**·**撤回相关的关键词 revokemsg |
-	**·**多开相关的关键词 WeChat_App_Instance_Identity_Mutex_Name |
+	·撤回、限制多开的逻辑都位于 WeChatWin.dll | 文件中
+	·撤回相关的关键词 revokemsg |
+	·多开相关的关键词 WeChat_App_Instance_Identity_Mutex_Name |
 # 三、调试
 	1.打开 x64dbg （32位用x32dbg，64位用x64dbg，现在新版本微信都是64位），点击 文件 -> 附加 点击 文件 -> 附加
 <img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/a9bfec21-d7a6-4f24-8d2e-81f0a574eb59" />
@@ -88,6 +88,9 @@
 3. **以管理员身份运行本程序**
 
 4. 选择微信的安装路径。如果你用的安装版的微信，正常情况下本程序会自动从注册表中获取安装路径，绿色版需要手动选择路径。
+<img width="781" height="345" alt="image" src="https://github.com/user-attachments/assets/196ec83d-ac96-49d6-a34c-15c8a64758ca" />
+<img width="1095" height="845" alt="image" src="https://github.com/user-attachments/assets/b85daf0a-8c45-47fb-be25-83bd2450202e" />
+
 
 5. **由于修改了微信的 WeChatWin.dll 文件，杀毒软件可能会弹出警告，放行即可。**
 
