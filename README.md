@@ -30,15 +30,45 @@
 [📖查看完整文档](https://github.com/huiyadanli/RevokeMsgPatcher/wiki)
 
 原理与方法：
-[📗微信](https://github.com/huiyadanli/RevokeMsgPatcher/wiki/%E5%BE%AE%E4%BF%A1%E9%98%B2%E6%92%A4%E5%9B%9E%E4%B8%8E%E5%A4%9A%E5%BC%80%E6%95%99%E7%A8%8B) |
-[📕QQ](https://github.com/huiyadanli/RevokeMsgPatcher/wiki/QQ%E6%88%96TIM%E9%98%B2%E6%92%A4%E5%9B%9E%E6%95%99%E7%A8%8B) |
-[📘TIM](https://github.com/huiyadanli/RevokeMsgPatcher/wiki/QQ%E6%88%96TIM%E9%98%B2%E6%92%A4%E5%9B%9E%E6%95%99%E7%A8%8B)
+[📗微信]
+这是一个成果向教程，参考了一些网上的教程汇总而成。仅用于技术交流。
+
+工具
+x64dbg
+一定的计算机相关知识
+信息
+通过网上各位大牛的研究，我们已经知道一下信息：
+
+撤回、限制多开的逻辑都位于 WeChatWin.dll 文件中
+撤回相关的关键词 revokemsg
+多开相关的关键词 WeChat_App_Instance_Identity_Mutex_Name
+调试
+打开 x64dbg （32位用x32dbg，64位用x64dbg，现在新版本微信都是64位），点击 文件 -> 附加 点击 文件 -> 附加
+
+附加微信的进程 附加微信的进程
+
+切换到 符号 选项卡，在左下角搜索 WeChatWin.dll ，双击 wechatwin.dll 进入 CPU 选项卡 
+
+右键 搜索 -> 当前区域 -> 字符串 
+
+防撤回
+直接搜索关键词 revokemsg，然后双击第一个"revokemsg"进入 
+
+需要进行修改的是当前行的上面一行： je xxxxxx 
+
+双击 je xxxxxx ，把 je 修改为 jmp 即可 修改为jmp 修改后
+
+多开
+直接搜索关键词 WeChat_App_Instance_Identity_Mutex_Name，然后双击第一个L"WeChat_App_Instance_Identity_Mutex_Name"进入 
+
+需要进行修改的是当前行的上面第一个出现的 push ebp 
+
+双击 push ebp ，把 push ebp 修改为 ret 即可 修改为jmp 修改后
+
+生成补丁
+点击生成补丁的按钮，然后点击修补文件就可以得到修改后的 WeChatWin.dll |
+
 **（本人不参与方法寻找，仅做特征搬运）**
-
-附带产物：[一个通用的微信多开工具](https://github.com/huiyadanli/RevokeMsgPatcher/tree/master/RevokeMsgPatcher.MultiInstance)
-
-## 📷截图
-![Screenshot](https://raw.githubusercontent.com/huiyadanli/RevokeMsgPatcher/master/Images/screenshot.png)
 
 ## 🔨使用方法
 
@@ -47,36 +77,26 @@
     * Windows 7 或更高版本，**不支持XP**。
     * [.NET Framework 4.5.2](https://www.microsoft.com/en-us/download/details.aspx?id=42642) 或更高版本。**低于此版本在打开程序时可能无反应，或者直接报错**。
 
-2. 使用本程序前，先关闭微信/QQ/TIM。
+2. 使用本程序前，先关闭微信
 
-3. **以管理员身份运行本程序**，等待右下角获取最新的补丁信息。
+3. **以管理员身份运行本程序**
 
-4. 选择微信/QQ/TIM的安装路径。如果你用的安装版的微信/QQ/TIM，正常情况下本程序会自动从注册表中获取安装路径，绿色版需要手动选择路径。
+4. 选择微信的安装路径。如果你用的安装版的微信，正常情况下本程序会自动从注册表中获取安装路径，绿色版需要手动选择路径。
 
-5. 点击防撤回。界面可能会出现一段时间的无响应，请耐心等待。**由于修改了微信的 WeChatWin.dll 文件、QQ/TIM的 IM.dll 文件，杀毒软件可能会弹出警告，放行即可。**
+5. **由于修改了微信的 WeChatWin.dll 文件，杀毒软件可能会弹出警告，放行即可。**
 
-注意：微信/QQ/TIM更新之后要重新安装补丁！
+注意：微信更新之后要重新安装补丁！
 
 ## 💡致谢
 
 本项目早期内容源自 [wechat_anti_revoke](https://github.com/36huo/wechat_anti_revoke) 项目。
-
-2.0 之前版本 QQNT 防撤回依赖于 [LiteLoaderQQNT](https://github.com/LiteLoaderQQNT/LiteLoaderQQNT)，修补依赖于 [DLLHijackMethod](https://github.com/LiteLoaderQQNT/QQNTFileVerifyPatch/tree/DLLHijackMethod) 并集成了以下插件：
-
-* [插件列表查看 LL-plugin-list-viewer](https://github.com/ltxhhz/LL-plugin-list-viewer)
-* [防撤回 LiteLoaderQQNT-Anti-Recall](https://github.com/xh321/LiteLoaderQQNT-Anti-Recall)
-
-2.1 版本的 QQNTT 防撤回特征来自 [NTQQAntiRecall]( https://github.com/NapNeko/NTQQAntiRecall)
 
 微信4.0版本后的防撤回特征来自于 [BetterWX](https://github.com/zetaloop/BetterWX)
 
 ## ❤️投喂
 
 觉的好用的话，可以支持作者哟ヾ(･ω･`｡) 
-* [⚡爱发电](https://afdian.com/@huiyadanli)
-* [🍚微信赞赏](https://github.com/huiyadanli/huiyadanli/blob/master/DONATE.md)
 
-## 📄License
-[GPLv3](https://github.com/huiyadanli/RevokeMsgPatcher/blob/master/LICENSE)
+## 📄License💡
 
 ![](https://raw.githubusercontent.com/huiyadanli/RevokeMsgPatcher/master/Images/give_a_star.png)
