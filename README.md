@@ -1,4 +1,4 @@
-<img width="1198" height="655" alt="image" src="https://github.com/user-attachments/assets/c0223b5d-4534-4afa-b085-5777c5401dc7" />
+
 <p align="center">
 	<a><img width="100px" src="https://raw.githubusercontent.com/huiyadanli/RevokeMsgPatcher/master/Images/logo.png"/></a>
 </p>
